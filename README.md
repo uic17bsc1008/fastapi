@@ -1,3 +1,5 @@
+# Query related to SQLMOdel  
+
 ### 1. Basic Selection.  
 To start off, fetching all records from a table is straightforward:  
 ``items = session.exec(select(Item)).all()``
