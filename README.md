@@ -20,5 +20,5 @@ Calculate the number of records that fit certain criteria:
 
 ### 6. Using Joins.  
 Fetch related data from multiple tables:  
-``from sqlmodel import join``
+``from sqlmodel import join``  
 ``items_with_details = session.exec(select(Item, Detail).join(Detail)).all()``
