@@ -1,4 +1,4 @@
-# Query related to SQLMOdel  
+# Query related to SQLModel  
 
 ### 1. Basic Selection.  
 To start off, fetching all records from a table is straightforward:  
