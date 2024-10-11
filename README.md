@@ -21,4 +21,26 @@ Calculate the number of records that fit certain criteria:
 ### 6. Using Joins.  
 Fetch related data from multiple tables:  
 ``from sqlmodel import join``  
-``items_with_details = session.exec(select(Item, Detail).join(Detail)).all()``
+``items_with_details = session.exec(select(Item, Detail).join(Detail)).all()``  
+
+### 7. Aggregations.  
+Utilize functions like ``SUM()``, ``AVG()``, etc.:  
+``from sqlmodel.functions import avg``  
+
+``average_price = session.exec(select(avg(Item.price))).first()``  
+
+### 8. Using OR Conditions  
+Query using multiple conditions:  
+``from sqlalchemy import or_``  
+
+``items = session.exec(select(Item).filter(or_(Item.name == "widget", Item.price < 100))).all()``  
+
+### 9. Update Queries  
+Modify records based on certain conditions:  
+``session.exec(select(Item).filter(Item.name == "widget")).update({"price": 150})``  
+``session.commit()``  
+
+### 10. Deleting Records  
+Remove records as per certain criteria:  
+``session.exec(select(Item).filter(Item.name == "obsolete-widget")).delete()``  
+``session.commit()``  
