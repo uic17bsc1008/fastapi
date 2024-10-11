@@ -16,6 +16,10 @@ def create_db_and_tables():
 app = FastAPI()
 app.include_router(users.router)
 
+origins = [
+    "http://127.0.0.1:8080",
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
